@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+.TodoText {
+    color: #ffffff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+}
+
+.TodoContainer {
+    position: absolute;
+    width: 550px;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.TodoToggle {
+    width: 30px;
+    height: 30px;
+}
+
+.TodoHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.BackgroundImage {
+    background: url("../images/bg-desktop-dark.jpg") no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 300px;
+    width: 100%;
+}
+
+
+.BgLight {
+    background: url("../images/bg-desktop-light.jpg");
+}
+
+@media (max-width: 450px) {
+    .BackgroundImage {
+        height: 200px;
+    }
+}
