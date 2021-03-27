@@ -30,17 +30,91 @@
 
 
 .BackgroundImage {
-    background: url("../images/bg-desktop-dark.jpg") no-repeat;
-    background-size: cover;
     position: absolute;
     height: 300px;
     width: 100%;
 }
 
+.BackgroundImageLight {
+    background: url("../images/bg-desktop-light.jpg") no-repeat;
+    background-size: cover;
+}
+
+.BackgroundImageDark {
+    background: url("../images/bg-desktop-dark.jpg") no-repeat;
+    background-size: cover;
+}
 
 .BgLight {
     background: url("../images/bg-desktop-light.jpg");
 }
+
+.CheckSpanDark {
+    border-radius: 10px 0 0 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #25273C;
+    align-items: center;
+}
+
+.CheckSpanLight {
+    border-radius: 10px 0 0 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #ffffff;
+    align-items: center;
+}
+
+.CheckDark {
+    background-color: #25273C!important;
+    height: 30px;
+    width: 30px;
+    margin: 15px !important;
+    border: 1px solid hsl(235, 19%, 35%)!important;
+    border-radius: 30px !important;
+}
+
+.CheckLight {
+    background-color: #ffffff!important;
+    height: 30px;
+    width: 30px;
+    margin: 15px !important;
+    border: 1px solid hsl(235, 19%, 35%)!important;
+    border-radius: 30px !important;
+}
+
+.InputDark {
+    height: 60px !important;
+    padding: 0px 8px !important;
+    background-color: #25273C !important;
+    border: none !important;
+    color: hsl(0, 0%, 98%) !important;
+}
+
+.InputDark:focus,
+.InputDark:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.InputLight {
+    height: 60px !important;
+    padding: 0px 8px !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    color: hsl(235, 19%, 35%) !important;
+}
+
+.InputLight:focus,
+.InputLight:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
 
 @media (max-width: 450px) {
     .BackgroundImage {

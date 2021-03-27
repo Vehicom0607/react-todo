@@ -1,4 +1,5 @@
 const store = {
+    theme: 'night',
     items: []
 }
 
