@@ -3,6 +3,7 @@ import classes from './TodoTracker.module.css'
 import {InputGroup, Image} from "react-bootstrap";
 import {connect} from "react-redux";
 import * as actionTypes from '../store/actionTypes'
+import TodoItem from "../Components/TodoItem";
 
 class TodoTracker extends Component {
     state = {
@@ -11,7 +12,8 @@ class TodoTracker extends Component {
 
     onAddHandler = (event) => {
         if (event.key === "Enter") {
-            this.props.addEvent(this.state.inputForm)
+            const newItem = {task: this.state.inputForm, completed: false}
+            this.props.addItem(newItem)
             this.setState({inputForm: ''})
         }
     }
@@ -27,6 +29,10 @@ class TodoTracker extends Component {
             bgImgClasses.push(classes.BackgroundImageLight)
         }
 
+        let tasks = []
+        this.props.items.forEach((item, index) => {
+            tasks.push(<TodoItem task={item.task} key={index} theme={this.props.theme} completed={item.completed}  />)
+        })
 
         return (
             <React.Fragment>
@@ -42,6 +48,9 @@ class TodoTracker extends Component {
                         </span>
                         <input onKeyDown={(event) => this.onAddHandler(event)} type="text" value={this.state.inputForm} onChange={(event) => {this.setState({inputForm: event.target.value})}} aria-label="Text input" className={this.props.theme==='night'? classes.InputDark:classes.InputLight} />
                     </InputGroup>
+                    <div>
+                        {tasks}
+                    </div>
                 </div>
             </React.Fragment>
         );
@@ -50,14 +59,15 @@ class TodoTracker extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        theme: state.theme
+        theme: state.theme,
+        items: state.items
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         switchTheme: () => dispatch({type: actionTypes.CHANGE_THEME}),
-        addEvent: (item) => dispatch({type: actionTypes.ADD_ITEM, item})
+        addItem: (item) => dispatch({type: actionTypes.ADD_ITEM, item})
     }
 }
 

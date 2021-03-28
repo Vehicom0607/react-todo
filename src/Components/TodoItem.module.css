@@ -1,0 +1,76 @@
+.Task {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+
+.CheckSpanDark {
+    height: 60px;
+    width: 60px;
+    background-color: #25273C;
+    align-items: center;
+}
+
+.CheckSpanLight {
+    height: 60px;
+    width: 60px;
+    background-color: #ffffff;
+    align-items: center;
+}
+
+.CheckDark {
+    background-color: #25273C!important;
+    height: 30px;
+    width: 30px;
+    margin: 15px !important;
+    border: 1px solid hsl(235, 19%, 35%)!important;
+    border-radius: 30px !important;
+}
+
+.CheckLight {
+    background-color: #ffffff!important;
+    height: 30px;
+    width: 30px;
+    margin: 15px !important;
+    border: 1px solid hsl(235, 19%, 35%)!important;
+    border-radius: 30px !important;
+}
+
+.InputDark {
+    height: 60px !important;
+    padding: 0 8px !important;
+    margin: 0;
+    background-color: #25273C !important;
+    border: none !important;
+    color: hsl(0, 0%, 98%) !important;
+    font-size: 32px !important;
+    width: 490px;
+}
+
+.InputDark:focus,
+.InputDark:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.InputLight {
+    height: 60px !important;
+    padding: 0 8px !important;
+    margin: 0;
+    background-color: #ffffff !important;
+    border: none !important;
+    color: hsl(235, 19%, 35%) !important;
+    font-size: 32px !important;
+    width: 490px;
+
+}
+
+.InputLight:focus,
+.InputLight:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
