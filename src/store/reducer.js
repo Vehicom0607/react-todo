@@ -17,7 +17,10 @@ const reducer = (state = store, action) => {
                 }
             }
         case actionTypes.ADD_ITEM:
-            return state
+            return {
+                ...state,
+                items: state.items.concat(action.item)
+            }
         default:
             return state
     }

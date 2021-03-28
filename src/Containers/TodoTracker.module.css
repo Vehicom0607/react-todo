@@ -89,6 +89,8 @@
     background-color: #25273C !important;
     border: none !important;
     color: hsl(0, 0%, 98%) !important;
+    font-size: 32px !important;
+    width: 490px;
 }
 
 .InputDark:focus,
@@ -97,12 +99,16 @@
     box-shadow: none !important;
 }
 
+
 .InputLight {
     height: 60px !important;
     padding: 0px 8px !important;
     background-color: #ffffff !important;
     border: none !important;
     color: hsl(235, 19%, 35%) !important;
+    font-size: 32px !important;
+    width: 490px;
+
 }
 
 .InputLight:focus,

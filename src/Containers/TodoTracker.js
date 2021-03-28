@@ -1,10 +1,21 @@
 import React, {Component} from 'react';
 import classes from './TodoTracker.module.css'
-import {InputGroup, FormControl, Image} from "react-bootstrap";
+import {InputGroup, Image} from "react-bootstrap";
 import {connect} from "react-redux";
 import * as actionTypes from '../store/actionTypes'
 
 class TodoTracker extends Component {
+    state = {
+        inputForm: ''
+    }
+
+    onAddHandler = (event) => {
+        if (event.key === "Enter") {
+            this.props.addEvent(this.state.inputForm)
+            this.setState({inputForm: ''})
+        }
+    }
+
     render() {
         const bgImgClasses = [classes.BackgroundImage]
         let bgImgPath
@@ -29,7 +40,7 @@ class TodoTracker extends Component {
                         <span className={this.props.theme==='night'? classes.CheckSpanDark:classes.CheckSpanLight}>
                             <div className={this.props.theme==='night'? classes.CheckDark:classes.CheckLight} />
                         </span>
-                        <FormControl aria-label="Text input" className={this.props.theme==='night'? classes.InputDark:classes.InputLight} />
+                        <input onKeyDown={(event) => this.onAddHandler(event)} type="text" value={this.state.inputForm} onChange={(event) => {this.setState({inputForm: event.target.value})}} aria-label="Text input" className={this.props.theme==='night'? classes.InputDark:classes.InputLight} />
                     </InputGroup>
                 </div>
             </React.Fragment>
@@ -45,7 +56,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        switchTheme: () => dispatch({type: actionTypes.CHANGE_THEME})
+        switchTheme: () => dispatch({type: actionTypes.CHANGE_THEME}),
+        addEvent: (item) => dispatch({type: actionTypes.ADD_ITEM, item})
     }
 }
 
