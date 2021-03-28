@@ -19,7 +19,28 @@ const reducer = (state = store, action) => {
         case actionTypes.ADD_ITEM:
             return {
                 ...state,
-                items: state.items.concat(action.item)
+                items: [...state.items, action.item]
+            }
+        case actionTypes.DELETE_ITEM:
+            return {
+                ...state,
+                items: state.items.filter((_, i) => i !== action.index)
+            }
+        case actionTypes.COMPLETE_ITEM:
+            return {
+                ...state,
+                items: state.items.map((item, index) => {
+                    if (index === action.index) {
+                        return {...item, completed: !item.completed}
+                    } else {
+                        return item
+                    }
+                })
+            }
+        case actionTypes.CLEAR_COMPLETED:
+            return {
+                ...state,
+                items: state.items.filter((item) => item.completed === false)
             }
         default:
             return state

@@ -85,7 +85,7 @@
 
 .InputDark {
     height: 60px !important;
-    padding: 0px 8px !important;
+    padding: 0 8px !important;
     background-color: #25273C !important;
     border: none !important;
     color: hsl(0, 0%, 98%) !important;
@@ -102,7 +102,7 @@
 
 .InputLight {
     height: 60px !important;
-    padding: 0px 8px !important;
+    padding: 0 8px !important;
     background-color: #ffffff !important;
     border: none !important;
     color: hsl(235, 19%, 35%) !important;
@@ -117,13 +117,63 @@
     box-shadow: none !important;
 }
 
+.ItemsLeftText {
+    color: #52546D;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
 
+}
 
+.FooterTextDark {
+    cursor: grab;
+    color: #52546D;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0 5px;
+}
 
+.FooterTextLight {
+    cursor: grab;
+    color: #9B99A4;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0 5px;
+}
 
+.FooterTextDark:hover {
+    color: hsl(236, 33%, 92%);
+}
+.FooterTextLight:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+.FooterTextCurrent {
+    color: #5381D7 !important;
+}
+
+.FooterDesktop {
+
+}
+
+.FooterMobile {
+    display: none;
+    margin-top: 25px !important;
+}
 
 @media (max-width: 450px) {
     .BackgroundImage {
         height: 200px;
+    }
+    .TodoContainer {
+        width: 350px;
+    }
+    .InputDark, .InputLight {
+        width: 290px;
+    }
+    .FooterDesktop {
+        display: none !important;
+    }
+    .FooterMobile {
+        display: flex;
     }
 }
