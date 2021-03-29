@@ -23,7 +23,7 @@ const TodoItem = props => {
             </span>
             <p className={props.theme==='night'? classes.InputDark:classes.InputLight}>
                 {props.task}
-                <Image onClick={() => props.deleteTask()} src={'/images/icon-cross.svg'} className={props.theme==='night'? classes.CrossDark:classes.CrossLight} />
+                <Image alt="Delete Cross" onClick={() => props.deleteTask()} src={'/images/icon-cross.svg'} className={props.theme==='night'? classes.CrossDark:classes.CrossLight} />
             </p>
         </div>
     );
