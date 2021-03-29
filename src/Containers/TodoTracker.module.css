@@ -156,7 +156,7 @@
 }
 
 .FooterMobile {
-    display: none;
+    display: none !important;
     margin-top: 25px !important;
 }
 
